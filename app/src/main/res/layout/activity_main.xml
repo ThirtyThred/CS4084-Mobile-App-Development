@@ -1,34 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            android:contentDescription="@string/background" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="89dp"
+            android:background="@color/background_blue"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="cursive"
+                    android:text="@string/login_title_fast"
+                    android:textColor="#ffffff"
+                    android:textSize="60sp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="cursive"
+                    android:text="@string/login_title_food"
+                    android:textColor="#ffffff"
+                    android:textSize="60sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#deff00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/calibri"
+                android:gravity="center"
+                android:text="@string/login_subtitle"
+                android:textColor="#BFFFFFFF"
+                android:textSize="12sp"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.MyApplication.AppBarOverlay">
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:background="@color/background_blue"
+        android:orientation="vertical"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:textColorHint="#96ffffff"
+            android:theme="@style/EditScreenTextInputLayoutStyle">
 
-    </com.google.android.material.appbar.AppBarLayout>
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:drawableStart="@drawable/icon_email"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/calibri"
+                android:hint="@string/login_hint_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <include layout="@layout/content_main" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#96ffffff"
+            android:theme="@style/EditScreenTextInputLayoutStyle">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+            <EditText
+                android:id="@+id/user_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:drawableStart="@drawable/icon_lock"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/calibri"
+                android:hint="@string/login_hint_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sign_in"
+                android:layout_width="228dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_bg_nocolor"
+                android:fontFamily="@font/calibri"
+                android:text="@string/login_sign_in"
+                android:textAllCaps="false"
+                android:textColor="#BFFFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/calibri"
+                android:text="@string/login_sign_up"
+                android:textColor="#BFFFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="60dp"
+                android:fontFamily="@font/calibri"
+                android:text="@string/forgot_password"
+                android:textColor="#BFFFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

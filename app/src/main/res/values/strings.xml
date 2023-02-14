@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="app_name">FastFood App</string>
+    <string name="background">Background picture</string>
+    <string name="login_title_fast">Fast</string>
+    <string name="login_title_food">Food</string>
+    <string name="login_subtitle">Your best food delivery app</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_password">Password</string>
+    <string name="login_sign_in">Sign in</string>
+    <string name="login_sign_up">Sign up</string>
+    <string name="forgot_password">Forgot Password</string>
 </resources>
