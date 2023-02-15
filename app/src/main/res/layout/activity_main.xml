@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/background_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -30,7 +30,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="89dp"
+            android:layout_marginTop="90sp"
             android:background="@color/background_blue"
             android:gravity="center"
             android:orientation="vertical">
@@ -39,17 +39,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="25sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="10sp"
                     android:fontFamily="cursive"
                     android:text="@string/login_title_fast"
                     android:textColor="#ffffff"
-                    android:textSize="60sp" />
+                    android:textSize="70sp" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -58,7 +58,7 @@
                     android:fontFamily="cursive"
                     android:text="@string/login_title_food"
                     android:textColor="#ffffff"
-                    android:textSize="60sp" />
+                    android:textSize="70sp" />
 
             </LinearLayout>
 
@@ -76,7 +76,7 @@
                 android:gravity="center"
                 android:text="@string/login_subtitle"
                 android:textColor="#BFFFFFFF"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 tools:ignore="SmallSp" />
         </LinearLayout>
     </LinearLayout>
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="225dp"
         android:background="@color/background_blue"
         android:orientation="vertical"
         android:paddingLeft="32dp"
@@ -144,8 +144,9 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+
             <Button
-                android:id="@+id/sign_in"
+                android:id="@+id/sign_in_btn"
                 android:layout_width="228dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -156,15 +157,13 @@
                 android:textColor="#BFFFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
 
 
         <LinearLayout
-            android:layout_width="362dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="20sp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -172,7 +171,7 @@
                 android:id="@+id/sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="170sp"
                 android:fontFamily="@font/calibri"
                 android:text="@string/login_sign_up"
                 android:textColor="#BFFFFFFF"
@@ -182,7 +181,6 @@
                 android:id="@+id/forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="60dp"
                 android:fontFamily="@font/calibri"
                 android:text="@string/forgot_password"
                 android:textColor="#BFFFFFFF"
