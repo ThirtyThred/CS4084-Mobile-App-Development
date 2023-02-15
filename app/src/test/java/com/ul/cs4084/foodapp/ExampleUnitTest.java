@@ -1,4 +1,4 @@
-package com.shashank.platform.loginui;
+package com.ul.cs4084.foodapp;
 
 import org.junit.Test;
 
