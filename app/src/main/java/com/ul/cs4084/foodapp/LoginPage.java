@@ -2,10 +2,13 @@ package com.ul.cs4084.foodapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +19,7 @@ import com.ul.cs4084.foodapp.userdata.User;
 
 public class LoginPage extends AppCompatActivity {
     Button btnSignIn;
+    TextView btnSignUp;
     EditText edtPhone, edtPassword;
 
     @Override
@@ -58,6 +62,16 @@ public class LoginPage extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        //Sign-up button
+        btnSignUp = (TextView) findViewById(R.id.sign_up);
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signUp = new Intent(LoginPage.this,SignUp.class);
+                startActivity(signUp);
             }
         });
 
