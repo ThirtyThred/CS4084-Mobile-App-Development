@@ -46,6 +46,7 @@ public class LoginPage extends AppCompatActivity {
                             User user = snapshot.child(edtPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
                                 Toast.makeText(LoginPage.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+
                             }
                             else {
                                 Toast.makeText(LoginPage.this, "Wrong phone number or password, please try again.", Toast.LENGTH_SHORT).show();
