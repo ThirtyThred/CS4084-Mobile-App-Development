@@ -18,4 +18,25 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!--String use in profile:-->
+    <string name="edit_profile_string">Edit Profile</string>
+    <string name="user_icon">User Icon</string>
+    <string name="user_name">User Name</string>
+    <string name="sign_out_string">Sign Out</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="map_tool_icon">Map Tool Icon</string>
+    <string name="basket_icon">Basket Icon</string>
+    <string name="order_icon">Order Icon</string>
+    <string name="address_icon"> Address Icon</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="phone_string">Phone Number</string>
+    <string name="email_string">Email Address</string>
+    <string name="address_string">Home Address</string>
+    <string name="order_string">Order History</string>
+    <string name="basket_string">Basket</string>
+    <string name="map_tool_string">Map Tool</string>
+
+
+
 </resources>
