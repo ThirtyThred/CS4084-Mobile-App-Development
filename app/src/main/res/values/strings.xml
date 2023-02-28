@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">FastFood App</string>
+    <string name="menu_drawer_open">Drawer Open</string>
+    <string name="menu_drawer_close">Drawer Close</string>
     <string name="background">Background picture</string>
     <string name="login_title_fast">Fast</string>
     <string name="login_title_food">Food</string>
