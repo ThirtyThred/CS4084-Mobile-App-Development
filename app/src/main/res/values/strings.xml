@@ -1,4 +1,8 @@
 <resources>
+    <!--Common String-->
+    <string name="submit">Submit</string>
+
+    <!--Login-->
     <string name="app_name">FastFood App</string>
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
@@ -6,12 +10,13 @@
     <string name="login_title_fast">Fast</string>
     <string name="login_title_food">Food</string>
     <string name="login_subtitle">Your best food delivery app</string>
-    <string name="login_hint_phone">Phone number</string>
+    <string name="login_hint_email">Email</string>
     <string name="login_hint_password">Password</string>
     <string name="login_sign_in">Sign in</string>
     <string name="login_sign_up">Sign up</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="title_activity_main_page">Main_page</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -38,7 +43,7 @@
     <string name="order_string">Order History</string>
     <string name="basket_string">Basket</string>
     <string name="map_tool_string">Map Tool</string>
-
+    <string name="signup_title">Join Us Now</string>
 
 
 </resources>

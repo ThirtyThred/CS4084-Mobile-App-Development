@@ -13,10 +13,10 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="@color/fbutton_color_midnight_blue"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextColor="@color/fbutton_color_clouds"/>
+            app:titleTextColor="@color/fbutton_color_clouds" />
 
     </com.google.android.material.appbar.AppBarLayout>
     
