@@ -35,10 +35,10 @@
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginPage"
+            android:name=".LoginActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar"

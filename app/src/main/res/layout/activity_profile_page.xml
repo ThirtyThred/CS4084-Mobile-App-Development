@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00B33232"
-    tools:context=".profile_page">
+    tools:context=".Profile_page">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:background="@drawable/profile_background"
+                    android:background="@drawable/bg_profile"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -48,7 +48,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="-20dp"
                     android:layout_marginEnd="30dp"
-                    android:background="@drawable/blue_container"
+                    android:background="@drawable/container_blue"
                     android:backgroundTint="#CABCBC"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
                                     android:id="@+id/imageView"
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/phone_icon"
+                                    android:background="@drawable/ic_phone2"
                                     android:contentDescription="@string/phone_icon" />
 
                                 <TextView
@@ -126,7 +126,7 @@
                                     android:id="@+id/imageView1"
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/email_icon"
+                                    android:background="@drawable/ic_email2"
                                     android:contentDescription="@string/email_icon" />
 
                                 <TextView
@@ -164,7 +164,7 @@
                                     android:id="@+id/imageView2"
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/address"
+                                    android:background="@drawable/ic_address"
                                     android:contentDescription="@string/address_icon" />
 
                                 <TextView
@@ -204,7 +204,7 @@
                                     android:id="@+id/imageView3"
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/order_icon"
+                                    android:background="@drawable/ic_order"
                                     android:contentDescription="@string/user_icon" />
 
                                 <TextView
@@ -243,7 +243,7 @@
                                     android:id="@+id/imageView4"
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/basket_icon"
+                                    android:background="@drawable/ic_basket"
                                     android:contentDescription="@string/basket_icon" />
 
                                 <TextView
@@ -282,7 +282,7 @@
                                 <ImageView
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
-                                    android:background="@drawable/map_tool_icon"
+                                    android:background="@drawable/ic_map_tool"
                                     android:contentDescription="@string/map_tool_icon" />
 
                                 <TextView
@@ -319,7 +319,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:layout_marginTop="-100dp"
-                    android:background="@drawable/blue_container"
+                    android:background="@drawable/container_blue"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -387,7 +387,7 @@
                         android:id="@+id/button2"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/blue_container"
+                        android:background="@drawable/container_blue"
                         android:text="@string/sign_out_string"
                         android:textColor="#FFFFFF"
                         android:textSize="22sp"
@@ -402,7 +402,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="90dp"
-                    android:background="@drawable/user_photo"
+                    android:background="@drawable/ic_profile_photo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
