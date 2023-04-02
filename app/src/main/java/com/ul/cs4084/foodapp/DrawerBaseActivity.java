@@ -41,18 +41,20 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_menu:
-               startActivity(new Intent(this,MenuActivity.class));
-               overridePendingTransition(0,0);
-               break;
+                startActivity(new Intent(this, MenuActivity.class));
+                overridePendingTransition(0, 0);
+                break;
 
 
             case R.id.nav_basket:
-                startActivity(new Intent(this,BasketActivity.class));
-                overridePendingTransition(0,0);
+                startActivity(new Intent(this, BasketActivity.class));
+                overridePendingTransition(0, 0);
                 break;
+
         }
+
         return false;
     }
 

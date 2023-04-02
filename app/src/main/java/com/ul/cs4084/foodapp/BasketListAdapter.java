@@ -17,12 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ul.cs4084.foodapp.models.Food;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
+
+public class BasketListAdapter extends RecyclerView.Adapter<BasketListAdapter.ViewHolder> {
 
     private List<Food> foods;
     private Context context;
@@ -30,43 +28,41 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     private String basketButtonTitle;
     private InteractionInterface interactionInterface;
 
-    private static final String TAG = FoodAdapter.class.getName();
+    private static final String TAG = BasketListAdapter.class.getName();
 
 
-    public FoodAdapter(List<Food> foods, Context context, String basketButtonTitle, InteractionInterface interactionInterface) {
+    public BasketListAdapter(List<Food> foods, Context context, String basketButtonTitle, InteractionInterface interactionInterface) {
         this.foods = foods;
         this.context = context;
         this.basketButtonTitle = basketButtonTitle;
         this.interactionInterface = interactionInterface;
-
     }
 
     @NonNull
     @Override
-    public FoodAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.food_item, parent, false);
+    public BasketListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.basket_food_item, parent, false);
         return new ViewHolder(view);
     }
 
-    // Helper method to get the drawable resource ID given the resource name
     private int getDrawableResourceId(String name) {
         Resources resources = context.getResources();
         return resources.getIdentifier(name, "drawable", context.getPackageName());
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull BasketListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Food food = foods.get(position);
-        holder.nameView.setText(food.getName());
+        holder.nameView.setText("("+food.getCount() +") "+ food.getName());
         holder.descriptionView.setText(food.getDescription());
         holder.priceView.setText(food.getPrice());
-
 
         Glide.with(context)
                 .load(food.getImageUrl())
                 .centerCrop()
                 .placeholder(getDrawableResourceId("image_"+food.getImagePlaceholder()))
                 .into(holder.imageView);
+
 
         holder.itemView.setOnClickListener(view -> interactionInterface.onFoodClicked(position));
         holder.addToBasketButton.setOnClickListener(view -> interactionInterface.addToBasket(position));
@@ -88,12 +84,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            nameView = itemView.findViewById(R.id.foodName);
-            descriptionView = itemView.findViewById(R.id.foodDescrition);
-            priceView = itemView.findViewById(R.id.foodPrice);
-            imageView = itemView.findViewById(R.id.foodImage);
-            addToBasketButton = itemView.findViewById(R.id.addToBasketButton);
-
+            nameView = itemView.findViewById(R.id.basketFoodName);
+            descriptionView = itemView.findViewById(R.id.basketFoodDescrition);
+            priceView = itemView.findViewById(R.id.basketFoodPrice);
+            imageView = itemView.findViewById(R.id.basketFoodImage);
+            addToBasketButton = itemView.findViewById(R.id.basketRemoveFromBasketButton);
         }
     }
 
