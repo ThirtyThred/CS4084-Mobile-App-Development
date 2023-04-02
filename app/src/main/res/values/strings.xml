@@ -43,7 +43,7 @@
     <string name="order_string">Order History</string>
     <string name="basket_string">Basket</string>
     <string name="map_tool_string">Map Tool</string>
-    <string name="signup_title">Join Us Now</string>
-
-
+    <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="food_image">food_image</string>
+    <string name="signup_title">Sign up</string>
 </resources>

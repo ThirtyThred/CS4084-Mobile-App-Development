@@ -10,5 +10,6 @@ public class Profile_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
+
     }
 }
