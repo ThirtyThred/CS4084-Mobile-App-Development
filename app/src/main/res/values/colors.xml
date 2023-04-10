@@ -16,7 +16,7 @@
     <color name="blue_200">#00A8CC</color>
     <color name="blue_500">#2F58CD</color>
     <color name="blue_700">#0002A1</color>
-    <color name="background">#594E6075</color>
+    <color name="background">#DD0D0F11</color>
     <color name="beige">#BFFFFFFF</color>
     <color name="input_font">#96ffffff</color>
 </resources>

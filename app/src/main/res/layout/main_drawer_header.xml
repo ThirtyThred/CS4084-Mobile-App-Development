@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:padding="20dp"
-    android:background="@color/fbutton_color_midnight_blue"
+    android:background="@color/fbutton_color_green_sea"
 >
     <ImageView
         android:layout_width="120dp"
