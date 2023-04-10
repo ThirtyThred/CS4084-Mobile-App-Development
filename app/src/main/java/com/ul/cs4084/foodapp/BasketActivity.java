@@ -3,6 +3,7 @@ package com.ul.cs4084.foodapp;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -73,9 +74,9 @@ public class BasketActivity extends DrawerBaseActivity implements BasketListAdap
     }
 
     @Override
-    public void addToBasket(int position) {
-        Food food = foods.get(position);
+    public void removeFromBasket(Food food) {
+        int index = foods.indexOf(food);
         database.delete(food);
-        foodAdapter.notifyItemRemoved(position);
+        foodAdapter.notifyItemRemoved(index);
     }
 }
