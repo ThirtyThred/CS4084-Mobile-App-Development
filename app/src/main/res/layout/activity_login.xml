@@ -100,7 +100,8 @@
                 android:hint="@string/login_hint_email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/beige"
-                tools:theme="@style/EditScreenTextInputLayoutStyle" />
+                tools:theme="@style/EditScreenTextInputLayoutStyle"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,6 +111,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:textColorHint="@color/beige"
+            android:layout_below="@+id/EmailInput"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
@@ -132,40 +134,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_transparent"
+            android:layout_below="@+id/PasswordInput"
             android:fontFamily="@font/calibri"
             android:text="submit"
             android:textColor="#E6FFFFFF"
             tools:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="25dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
+            <Button
                 android:id="@+id/sign_up"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="80dp"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/calibri"
-                android:text="@string/login_sign_up"
                 android:textColor="@color/beige"
-                android:textSize="18sp" />
+                android:text="No account yet? Sign up"
+                tools:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"  />
 
-            <TextView
-                android:id="@+id/forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="80dp"
-                android:fontFamily="@font/calibri"
-                android:text="@string/forgot_password"
-                android:textColor="@color/beige"
-                android:textSize="18sp" />
-
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

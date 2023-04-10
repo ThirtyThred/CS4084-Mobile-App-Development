@@ -15,11 +15,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
 
     @Override
     public void setContentView(View view) {
@@ -27,6 +33,8 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         FrameLayout container = drawerLayout.findViewById(R.id.activityContainer);
         container.addView(view);
         super.setContentView(drawerLayout);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Toolbar toolbar = drawerLayout.findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
@@ -53,9 +61,18 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 overridePendingTransition(0, 0);
                 break;
 
+            case R.id.nav_signOut:
+                mAuth.signOut();
+                showLogInActivity();
+
         }
 
         return false;
+    }
+
+    public void showLogInActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     protected void allocateActivityTitle(String titleString){

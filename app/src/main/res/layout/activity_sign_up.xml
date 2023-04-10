@@ -14,10 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:cardBackgroundColor="#4D4E6075"
+        app:cardBackgroundColor="@color/background"
         app:cardElevation="20dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/linearLayoutBottom"
             android:layout_width="match_parent"
             android:layout_height="633dp"
@@ -41,9 +41,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/EmailInput"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="20dp"
                 android:textColorHint="@color/beige"
+                android:layout_below="@+id/Sign_up_title"
                 android:theme="@style/EditScreenTextInputLayoutStyle">
 
                 <EditText
@@ -68,6 +69,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:textColorHint="@color/beige"
+                android:layout_below="@+id/EmailInput"
                 android:theme="@style/EditScreenTextInputLayoutStyle">
 
                 <EditText
@@ -86,27 +88,32 @@
 
             <Button
                 android:id="@+id/Sign_up_btn"
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="20dp"
+                android:layout_below="@+id/PasswordInput"
                 android:background="@drawable/btn_transparent"
                 android:fontFamily="@font/calibri"
                 android:text="Sign Up"
+                android:gravity="center"
                 android:textColor="#E6FFFFFF"
                 tools:textStyle="bold" />
 
-            <TextView
+
+            <Button
                 android:id="@+id/loginRedirect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:gravity="center"
+                android:layout_below="@+id/Sign_up_btn"
                 android:padding="8dp"
-                android:text="Already an user?  Login"
+                android:text="Already an user? Login"
+                style="?android:attr/buttonBarButtonStyle"
                 android:textColor="@color/beige" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
