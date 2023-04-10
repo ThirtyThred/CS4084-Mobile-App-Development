@@ -65,7 +65,7 @@ public class BasketListAdapter extends RecyclerView.Adapter<BasketListAdapter.Vi
 
 
         holder.itemView.setOnClickListener(view -> interactionInterface.onFoodClicked(position));
-        holder.addToBasketButton.setOnClickListener(view -> interactionInterface.addToBasket(position));
+        holder.addToBasketButton.setOnClickListener(view -> interactionInterface.removeFromBasket(food));
         holder.addToBasketButton.setText(basketButtonTitle);
     }
 
@@ -94,6 +94,6 @@ public class BasketListAdapter extends RecyclerView.Adapter<BasketListAdapter.Vi
 
     public interface InteractionInterface {
         void onFoodClicked(int position);
-        void addToBasket(int position);
+        void removeFromBasket(Food food);
     }
 }
