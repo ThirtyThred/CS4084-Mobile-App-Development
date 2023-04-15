@@ -1,15 +1,18 @@
 package com.ul.cs4084.foodapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Profile_page extends AppCompatActivity {
+import com.ul.cs4084.foodapp.databinding.ActivityProfilePageBinding;
+
+public class Profile_page extends DrawerBaseActivity {
+    ActivityProfilePageBinding activityProfilePageBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_page);
-
+        activityProfilePageBinding = ActivityProfilePageBinding.inflate(getLayoutInflater());
+        setContentView(activityProfilePageBinding.getRoot());
+        allocateActivityTitle("Profile");
     }
 }

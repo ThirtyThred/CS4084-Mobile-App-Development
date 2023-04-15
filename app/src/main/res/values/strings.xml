@@ -1,14 +1,14 @@
 <resources>
     <!--Common String-->
-    <string name="submit">Submit</string>
+    <string name="submit">Login</string>
 
     <!--Login-->
-    <string name="app_name">FastFood App</string>
+    <string name="app_name">Hunger Bounce App</string>
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
     <string name="background">Background picture</string>
-    <string name="login_title_fast">Fast</string>
-    <string name="login_title_food">Food</string>
+    <string name="login_title_fast">Hunger</string>
+    <string name="login_title_food">Bounce</string>
     <string name="login_subtitle">Your best food delivery app</string>
     <string name="login_hint_email">Email</string>
     <string name="login_hint_password">Password</string>
@@ -46,4 +46,10 @@
     <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="food_image">food_image</string>
     <string name="signup_title">Sign up</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="bank">bank</string>
+    <string name="restaurant">restaurant</string>
+    <string name="atm">atm</string>
+    <string name="hospital">hospital</string>
 </resources>

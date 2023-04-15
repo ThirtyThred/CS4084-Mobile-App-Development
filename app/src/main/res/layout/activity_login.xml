@@ -37,7 +37,7 @@
                     android:fontFamily="cursive"
                     android:text="@string/login_title_fast"
                     android:textColor="@color/white"
-                    android:textSize="75sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/TitleRight"
@@ -46,7 +46,7 @@
                     android:fontFamily="cursive"
                     android:text="@string/login_title_food"
                     android:textColor="@color/white"
-                    android:textSize="75sp" />
+                    android:textSize="60sp" />
 
             </LinearLayout>
 
