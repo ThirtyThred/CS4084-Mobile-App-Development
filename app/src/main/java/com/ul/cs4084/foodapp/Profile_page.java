@@ -2,16 +2,25 @@ package com.ul.cs4084.foodapp;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 import com.ul.cs4084.foodapp.databinding.ActivityProfilePageBinding;
+
+import java.io.File;
+
 
 public class Profile_page extends DrawerBaseActivity {
     ActivityProfilePageBinding activityProfilePageBinding;
@@ -21,6 +30,8 @@ public class Profile_page extends DrawerBaseActivity {
     private String userId;
     private FirebaseUser user;
 
+    com.google.firebase.storage.StorageReference storageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +40,8 @@ public class Profile_page extends DrawerBaseActivity {
         allocateActivityTitle("Profile");
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
+        
 
         Button button = findViewById(R.id.button3);
         user_name = findViewById(R.id.textView4);
@@ -37,7 +50,17 @@ public class Profile_page extends DrawerBaseActivity {
         address = findViewById(R.id.textView2);
         userId = fAuth.getCurrentUser().getUid();
         user = fAuth.getCurrentUser();
+      /* imageView = findViewById(R.id.constraintLayout3);
 
+
+
+        com.google.firebase.storage.StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener((OnSuccessListener ) (uri) ->{
+            Picasso.get().load((File) uri).into((ImageView) imageView);
+
+
+        });
+*/
         DocumentReference documentReference = fstore.collection("users").document(userId);
         documentReference.addSnapshotListener(this,(documentSnapshot,e) -> {
             if(documentSnapshot.exists()){
@@ -70,5 +93,8 @@ public class Profile_page extends DrawerBaseActivity {
                 startActivity(intent2);
             }
         });
+    }
+
+    private class StorageReference {
     }
 }
