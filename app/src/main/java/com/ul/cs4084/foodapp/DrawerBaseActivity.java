@@ -8,15 +8,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -58,6 +53,16 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
 
             case R.id.nav_basket:
                 startActivity(new Intent(this, BasketActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+
+            case R.id.nav_map:
+                startActivity(new Intent(this, MapActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+
+            case R.id.nav_profile:
+                startActivity(new Intent(this, Profile_page.class));
                 overridePendingTransition(0, 0);
                 break;
 
