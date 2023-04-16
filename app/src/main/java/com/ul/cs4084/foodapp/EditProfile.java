@@ -34,13 +34,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+import com.ul.cs4084.foodapp.databinding.ActivityEditProfileBinding;
+import com.ul.cs4084.foodapp.databinding.ActivityProfilePageBinding;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditProfile extends AppCompatActivity {
-
+public class EditProfile extends DrawerBaseActivity {
+    ActivityEditProfileBinding binding;
     public static final String TAG = "TAG";
     public static final int Request_code = 100;
     EditText p_fullname, p_phone, p_email, p_address;
@@ -58,12 +60,12 @@ public class EditProfile extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION_CODE = 1;
     private ActivityResultLauncher<String> cameraPermissionLauncher;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
-        setTitle("Edit Profile");
+        binding = ActivityEditProfileBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        allocateActivityTitle("Edit Profile");
 
         loadProfilePicture();
 
