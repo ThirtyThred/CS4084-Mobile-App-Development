@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -33,8 +35,7 @@
 
         <activity
             android:name=".MapActivity"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".Profile_page"
             android:exported="false" />

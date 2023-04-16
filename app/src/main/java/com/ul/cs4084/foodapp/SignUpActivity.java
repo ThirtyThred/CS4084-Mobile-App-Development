@@ -11,7 +11,11 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -52,7 +56,27 @@ public class SignUpActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "User created successfully... ", Toast.LENGTH_SHORT).show();
                        Log.d(TAG, "User created successfully...");
-                       showMenuActivity();
+
+                        String userId = mAuth.getCurrentUser().getUid();
+
+                        // Create a new Firestore document for the user
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        DocumentReference userRef = db.collection("users").document(userId);
+
+                        // Create a new user object with the user's email address
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("email", email);
+
+                        // Set the user document data in Firestore
+                        userRef.set(user)
+                                .addOnSuccessListener(aVoid -> {
+                                    Log.d(TAG, "User document added to Firestore with ID: " + userRef.getId());
+                                    showMenuActivity();
+                                })
+                                .addOnFailureListener(e -> {
+                                    Log.w(TAG, "Error adding user document to Firestore", e);
+                                    Toast.makeText(this, "Failed to add user document to Firestore", Toast.LENGTH_LONG).show();
+                                });
                     } else {
                         Log.d(TAG, "Failed to create user: "+ Objects.requireNonNull(task.getException()).getMessage());
                         Toast.makeText(this, "Failed to create user: "+ Objects.requireNonNull(task.getException()).getMessage() + ", please sign up first!", Toast.LENGTH_LONG).show();
