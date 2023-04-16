@@ -222,7 +222,7 @@
                                     android:background="#A4B6C9"
                                     android:paddingTop="20dp"
                                     android:paddingBottom="20dp"
-                                    android:text="Chang Password" />
+                                    android:text="Change Password" />
 
                             </LinearLayout>
 

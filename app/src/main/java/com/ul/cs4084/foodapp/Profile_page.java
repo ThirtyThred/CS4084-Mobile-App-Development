@@ -24,7 +24,7 @@ import java.io.File;
 
 public class Profile_page extends DrawerBaseActivity {
     ActivityProfilePageBinding activityProfilePageBinding;
-    private TextView phone,user_name,email,address;
+    private TextView phone, user_name, email, address;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fstore;
     private String userId;
@@ -41,7 +41,7 @@ public class Profile_page extends DrawerBaseActivity {
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        
+
 
         Button button = findViewById(R.id.button3);
         user_name = findViewById(R.id.textView4);
@@ -50,26 +50,38 @@ public class Profile_page extends DrawerBaseActivity {
         address = findViewById(R.id.textView2);
         userId = fAuth.getCurrentUser().getUid();
         user = fAuth.getCurrentUser();
+        Button c_button = findViewById(R.id.button7);
       /* imageView = findViewById(R.id.constraintLayout3);
 
 
 
         com.google.firebase.storage.StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener((OnSuccessListener ) (uri) ->{
-            Picasso.get().load((File) uri).into((ImageView) imageView);
+            Picasso.get().load((File) uri).into((ImageView) imageView3);
 
 
         });
 */
         DocumentReference documentReference = fstore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this,(documentSnapshot,e) -> {
-            if(documentSnapshot.exists()){
+        documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
+            if (documentSnapshot.exists()) {
                 phone.setText(documentSnapshot.getString("phoneNo"));
                 address.setText(documentSnapshot.getString("Address"));
                 user_name.setText(documentSnapshot.getString("fullname"));
                 email.setText(documentSnapshot.getString("email"));
             }
         });
+
+        c_button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View view){
+                // Create an Intent to navigate to the second activity
+                Intent intent3 = new Intent(Profile_page.this, Change_Password.class);
+                startActivity(intent3);
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,8 +89,8 @@ public class Profile_page extends DrawerBaseActivity {
                 Intent intent1 = new Intent(Profile_page.this, EditProfile.class);
                 intent1.putExtra("fullname", user_name.getText().toString());
                 intent1.putExtra("phoneNo", phone.getText().toString());
-                intent1.putExtra("email",  email.getText().toString());
-                intent1.putExtra("Address",  address.getText().toString());
+                intent1.putExtra("email", email.getText().toString());
+                intent1.putExtra("Address", address.getText().toString());
                 startActivity(intent1);
             }
         });
@@ -95,6 +107,6 @@ public class Profile_page extends DrawerBaseActivity {
         });
     }
 
-    private class StorageReference {
-    }
+
+
 }
