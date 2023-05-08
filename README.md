@@ -1,4 +1,4 @@
-# CS4084-Mobile-App-Development
+### CS4084 Mobile App Development
 
 1.	Hunger Bounce App: 
 https://github.com/nansvn/CS4084-Mobile-App-Development
